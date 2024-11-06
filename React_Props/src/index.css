@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #212120;
+}
+
+/* Main app container */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Main content area */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+/* Keep your existing card styles */
+.card {
+  border: 1px solid hsl(0, 0%, 80%);
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.1);
+  padding: 20px;
+  margin: 20px;
+  text-align: center;
+  max-width: 250px;
+  display: inline-block;
+  background-color: aliceblue;
+}
+
+/* Your other existing styles remain the same */
+.card .title {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  color: hsl(0, 0%, 20%)
+}
+
+.card .profile {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.card .description {
+  font-family: Arial, Helvetica, sans-serif;
+  color: hsl(0, 0%, 30%)
+}
+
+.navul {
+  color: aliceblue;
+  display: flex;
+  list-style-type: none;
+  margin-left: 300px;
+}
+
+.navul li {
+  margin: 0 120px;
+}
+
+.navul a {
+  color: white;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 2px solid hsl(0, 0%, 80%);
+  box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.1);
+}
+
+#header {
+  color: aliceblue;
+  text-align: center;
+}
+
+.buttondiv {
+  text-align: center;
+  width: 100%; /* Add this to ensure button takes full width of flex container */
+}
+
+.footer {
+  color: aliceblue;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+  background-color: #212120;
+}
