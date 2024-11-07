@@ -1,34 +1,40 @@
 import propType from "prop-types"
+import Card from "./Card";
 
-function List(props,{id = 0, name = "product", price = 0}) {
-    const listProducts = props.items;
-    const Category = props.category;
+function List(props) {
+    const { items: listProducts, category: Category } = props;
 
     // Sorting the price in ascending order
     listProducts.sort((a,b) => a.price - b.price);
 
-    const item = listProducts.map((item) => <li id={item.id} className="item">
-                                                    {item.name}:&nbsp;
-                                                    {item.price}
-                                                </li>);
-    
     return(
-    <div className="container">  
-        <h3 className="category">{Category}</h3>
-        <ul className="itemContainer">
-            {item}
-        </ul>
-    </div>
+        <>
+            <h2>{Category}</h2>
+            {listProducts.map((item) => (
+                <Card
+                    cardItem={item} 
+                />
+            ))}
+            <hr></hr>
+        </>
     );
 }
-List.propTypes = {
-    category : propType.string,
-    items : propType.arrayOf(
-                    propType.shape({
-                            id : propType.number,
-                            name : propType.string,
-                            price : propType.number
-                    })
-                    )
-}
+
+// Setting defaultProps for List component
+List.defaultProps = {
+    category: "Category",
+    items:[]
+};
+
+List.propType = {
+    category: propType.string,
+    items: propType.arrayOf(
+        propType.shape({
+            id: propType.number,
+            name: propType.string,
+            price: propType.number,
+        })
+    ).isRequired,
+};
+
 export default List;
