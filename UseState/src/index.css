@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #212120;
+}
+
+.counter-container {
+  text-align: center;
+}
+
+.counter-container .button {
+  width: 150px;
+  height: 50px;
+  margin-right: 10px;
+  background-color: hsl(100, 96%, 56%);
+  font-size: 15px;
+  border-radius: 5px;
+  border-color:aliceblue;
+  border-width: 3px;
+}
+
+.counter-container .button:hover {
+  background-color: hsl(100, 65%, 48%);
+}
+
+.counterName {
+  margin-top: 0px;
+  font-family: sans-serif;
+  color: aliceblue;
+  font-size: 10em;
+  text-align: center;
+}
