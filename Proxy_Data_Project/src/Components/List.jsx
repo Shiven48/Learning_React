@@ -1,27 +1,34 @@
-function List() {
-    // A proxy Data assuming it is fetched from database
-    const Category = "Products";
-    const listProducts = [
-                            {id:1,productName:"Smartphone",price:5000},
-                            {id:2,productName:"Table",price:2000},
-                            {id:3,productName:"Chair",price:1000},
-                            {id:4,productName:"Headset",price:1500},
-                            {id:5,productName:"Laptop",price:60000}
-                        ];
+import propType from "prop-types"
 
-    const item = listProducts.map((product) => <li id={product.id}>
-                                                    {product.productName}:&nbsp;
-                                                    {product.price}
-                                                </li>)
+function List(props,{id = 0, name = "product", price = 0}) {
+    const listProducts = props.items;
+    const Category = props.category;
 
+    // Sorting the price in ascending order
+    listProducts.sort((a,b) => a.price - b.price);
+
+    const item = listProducts.map((item) => <li id={item.id} className="item">
+                                                    {item.name}:&nbsp;
+                                                    {item.price}
+                                                </li>);
+    
     return(
-    <>  
-        <h3>{Category}</h3>
-        <ul>
+    <div className="container">  
+        <h3 className="category">{Category}</h3>
+        <ul className="itemContainer">
             {item}
         </ul>
-    </>
+    </div>
     );
 }
-
+List.propTypes = {
+    category : propType.string,
+    items : propType.arrayOf(
+                    propType.shape({
+                            id : propType.number,
+                            name : propType.string,
+                            price : propType.number
+                    })
+                    )
+}
 export default List;
