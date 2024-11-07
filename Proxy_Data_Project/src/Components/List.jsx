@@ -9,13 +9,12 @@ function List(props) {
 
     return(
         <>
-            <h2>{Category}</h2>
+            <h2 className="listCategory">{Category}</h2>
             {listProducts.map((item) => (
                 <Card
                     cardItem={item} 
                 />
             ))}
-            <hr></hr>
         </>
     );
 }

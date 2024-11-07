@@ -1,10 +1,15 @@
 function Card(props) {
     return(
-        <div className="cardContainer">
-            <p className="cardName">{props.cardItem.name}</p>
-            <p className="cardPrice">{props.cardItem.price}</p>
+    <div className="cardContainer">
+        <div className="cardText">
+            <div className="cardName">
+                <button className="buttonName">{props.cardItem.name}</button>
+            </div>
+            <div className="cardPrice">
+                <button className="buttonPrice">{props.cardItem.price}</button>
+            </div>
         </div>
-        
+    </div> 
     );
 }
 
