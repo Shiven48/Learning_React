@@ -1,0 +1,37 @@
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    columns: auto;
+    font-family: sans-serif;
+
+}
+
+.headingtext{
+    text-align: center;
+}
+
+.color-container {
+    width: 300px;
+    height: 250px;
+    border-radius: 5px;
+    border: solid 3px ;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.25s ease;
+}
+
+.inputtext {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+input[type="color"] {
+    width: 75px;
+    height: 50px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px solid;
+}
