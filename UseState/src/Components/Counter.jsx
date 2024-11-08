@@ -4,7 +4,7 @@ function Counter() {
     let [counter, setCounter] = useState(0)
 
     const decrementCounter = () => {
-        setCounter(counter--);
+        setCounter(c => c - 1);
     }
 
     const resetCounter = () => {
@@ -12,15 +12,15 @@ function Counter() {
     }
 
     const incrementCounter = () => {
-        setCounter(counter++)
+        setCounter(c => c + 1)
     }
 
     return(
         <div className="counter-container">
             <h1 className="counterName">{counter}</h1>
-            <button className="button" onClick={decrementCounter}>Decrement:{counter}</button>
-            <button className="button" onClick={resetCounter}>Reset:{counter}</button>
-            <button className="button" onClick={incrementCounter}>Increment:{counter}</button>
+            <button className="button" onClick={decrementCounter}>Decrement</button>
+            <button className="button" onClick={resetCounter}>Reset</button>
+            <button className="button" onClick={incrementCounter}>Increment</button>
         </div>
     );
 }
