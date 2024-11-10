@@ -1,9 +1,10 @@
-import Counter from "./Components/Counter";
+// import Counter from "./Components/Counter";
+import Object from "./Components/Object.jsx"
 
 function App() {
   return (
     <div>
-      <Counter />
+      <Object />
     </div>
   );
 }
