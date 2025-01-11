@@ -1,21 +1,66 @@
 body {
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-  background-color: #212120;
-  align-content: center;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: hsl(0, 0%, 95%);
 }
 
-.counter-container {
-  text-align: center;
+.stopwatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 5px solid;
+  border-radius: 50px;
+  background-color: white;
+  padding: 30px;
 }
 
-.container {
-  text-align: center;
-  color: antiquewhite;
-  border: 3px solid;
-  border-color: white;
-  padding: 40px;
-  font-size: large;
+.display{
+  font-family: monospace;
+  font-weight: bold;
+  color: hsl(0, 0%, 30%);
+  text-shadow: 2px 2px 2px hsla(0, 0%, 0%,0.75);
+  margin-bottom: 25px;
+  font-size: 5rem;
 }
+
+.controls button{
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  margin: 5px;
+  min-width: 125px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.2s ease;
+}
+
+.start_button{
+  background-color: hsl(115, 100%, 40%);
+  color: black;
+}
+
+.start_button:hover{
+  background-color: hsl(115, 100%, 30%);
+}
+
+.stop_button{
+  background-color: hsl(10, 90%, 50%);
+  color: black;
+}
+
+.stop_button:hover{
+  background-color: hsl(10, 90%, 40%);
+}
+
+.restart_button{
+  background-color: hsl(205, 90%, 60%);
+  color: black;
+}
+
+.restart_button:hover{
+  background-color: hsl(205, 90%, 50%);
+}
+
