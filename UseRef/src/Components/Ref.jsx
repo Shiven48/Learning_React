@@ -8,23 +8,45 @@ const Ref = () => {
     const StartTimeRef = useRef(0);
 
     useEffect(() => {
+        if(isRunning) {
+            IntervalIdRef.current = setInterval( () => {
+                setElapsedTime(Date.now() - StartTimeRef.current)
+            },10);
+        }
+
+        return () => {
+            clearInterval(IntervalIdRef.current)
+        } 
 
     },[isRunning]); 
 
     const StartWatch = () => {
-       
+       setIsRunning(true)
+       StartTimeRef.current = Date.now() - elapsedTime;
     }
 
     const StopWatch = () => {
-
+        setIsRunning(false)
     }
 
     const RestartWatch = () => {
-
+        setElapsedTime(0)
+        setIsRunning(false)
     }
 
     const formatTime = () => {
-        return `00:00:00`;
+
+        let hours = Math.floor(elapsedTime / (1000 * 60 * 60))
+        let minutes = Math.floor(elapsedTime / (1000 * 60) % 60)
+        let seconds = Math.floor(elapsedTime / (1000) % 60)
+        let milliseconds = Math.floor((elapsedTime % 1000) / 10)
+
+        hours = String(hours).padStart(2,"0")
+        minutes = String(minutes).padStart(2,"0")
+        seconds = String(seconds).padStart(2,"0")
+        milliseconds = String(milliseconds).padStart(2,"0")
+
+        return `${minutes}:${seconds}:${milliseconds}`;
     }
 
     return(
